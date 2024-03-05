@@ -1,0 +1,33 @@
+[package]
+name = "unstakefi-reserves-swap-adapter"
+version = "1.0.0"
+authors = ["Fuzion <hello@fuzion.app>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+backtraces = ["cosmwasm-std/backtraces"]
+library = []
+
+[dependencies]
+kujira = "0.8.3"
+cosmwasm-std = "1.5.3"
+cosmwasm-schema = "1.5.3"
+cw-storage-plus = "1.2.0"
+cw-utils = "1.0.3"
+cw2 = "1.1.2"
+thiserror = "1.0.56"
+unstake = { git = "https://github.com/unstake-fi/contracts.git", package = "unstake" }
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = 'abort'
+incremental = false
+overflow-checks = true
