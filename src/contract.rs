@@ -88,7 +88,7 @@ pub fn execute(
                     ContractError::InvalidDenom(received.denom)
                 );
                 ensure!(
-                    split[2] == "urcpt",
+                    split[2] == "ursv",
                     ContractError::InvalidDenom(received.denom)
                 );
 
